@@ -10,4 +10,8 @@ belongs_to :user
     user.twitter.update(body)
   end
 
+  def timeline_from_twitter
+    p user.twitter.timeline
+  end
+
 end

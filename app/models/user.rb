@@ -16,6 +16,14 @@ class User < ActiveRecord::Base
       config.access_token        = token
       config.access_token_secret = secret
     end
+  raise :test
+  @client.lists.each do |list|
+  # Get the timeline with the list ID
+    @client.list_timeline(list.id).each do |tweet|
+    puts tweet.text
+  end
+  end
+
   end
 end
 

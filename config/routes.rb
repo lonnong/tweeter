@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '/auth/:provider/callback', to: 'users#create'
+  resources :users
+  resources :tweets
+  root to: "tweets#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

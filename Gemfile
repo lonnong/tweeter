@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'twitter', '~> 5.3.1'
+
+gem 'responders', '~> 2.0'
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

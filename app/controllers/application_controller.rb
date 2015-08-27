@@ -6,6 +6,17 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def current_timeline
+    @current_timeline = []
+    @tweets.each do |tweet|
+
+      @current_timeline << tweet if tweet.user_id == :user_id
+    end
+    @current_timeline
+  end
+
+  helper_method :current_timeline
   helper_method :current_user
 
 end

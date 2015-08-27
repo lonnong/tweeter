@@ -12,6 +12,11 @@
   </thead>
 
   <tbody>
+    <% if current_user %>
+        <p class="navbar-text navbar-right">Signed in as <%= current_user.name %></p>
+        <p>Timeline <%= current_timeline %></p>
+      <% end %>
+
     <% @tweets.each do |tweet| %>
       <tr>
         <td><%= tweet.user_id %></td>

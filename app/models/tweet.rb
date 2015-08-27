@@ -11,6 +11,7 @@ belongs_to :user
   end
 
   def timeline_from_twitter
+    raise :test
     p user.twitter.timeline
   end
 

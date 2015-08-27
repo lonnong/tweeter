@@ -5,10 +5,7 @@ class User < ActiveRecord::Base
       name: auth_hash.info.nickname,
       token: auth_hash.credentials.token,
       secret: auth_hash.credentials.secret
-    )
-#    user.twitter.home_timeline.each do |tweet|
-#       user.create_tweet(tweet.text, user.id)
-#    end
+  )
     user
   end
 
@@ -21,20 +18,13 @@ class User < ActiveRecord::Base
     end
   end
 
-def create_tweet(body, user_id)
+def build_tweet(body, user_id)
   p body
   t= Tweet.new
   t.body = body
   t.user_id = user_id
   t.save
 end
-
-#  raise :test
-#  @client.lists.each do |list|
-  # Get the timeline with the list ID
-#    @client.home_timeline.each do |tweet|
-#    puts tweet.text
-#  end
 
 end
 

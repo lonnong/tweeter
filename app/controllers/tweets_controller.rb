@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.where(user_id: session[:user_id]).reverse_order.limit(10) 
   end
 
   def new
@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
+    @tweet.post_to_twitter
 
     respond_to do |format|
       if @tweet.save

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'users#create'
-  resources :users
+  get '/gene', to: 'users#post'
   resources :tweets
   root to: "tweets#index"
   # The priority is based upon order of creation: first created -> highest priority.

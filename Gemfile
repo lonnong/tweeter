@@ -4,6 +4,7 @@ gem 'twitter', '~> 5.3.1'
 
 gem 'responders', '~> 2.0'
 gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+gem 'rails_12factor', group: :production
 
 
 

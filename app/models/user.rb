@@ -23,6 +23,7 @@ def build_tweet(body, user_id)
   t= Tweet.new
   t.body = body
   t.user_id = user_id
+  t.post = false
   t.save
 end
 

@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Body</th>
+      
+      <th>TWEETS</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,16 +14,14 @@
   <tbody>
     <% if current_user %>
         <p class="navbar-text navbar-right">Signed in as <%= current_user.name %></p>
-        <p>Timeline <%= current_timeline %></p>
       <% end %>
 
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= tweet.user_id %></td>
         <td><%= tweet.body %></td>
-        <td><%= link_to 'Show', tweet %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%# link_to 'Show', tweet %></td>
+        <td><%# link_to 'Edit', edit_tweet_path(tweet) %></td>
+        <td><%# link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +30,4 @@
 <br>
 
 <%= link_to 'New Tweet', new_tweet_path %>
-<%= link_to 'Update Timeline', new_tweet_path %>
+<%= link_to 'Update Timeline', '/auth/twitter/' %>
